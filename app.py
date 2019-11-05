@@ -71,7 +71,7 @@ def generate_words(dictionary, in_bisect):
     for word in permutations(letters, size):
         delimeter = ""
         new_word = delimeter.join(word)
-        if in_bisect(dictionary, new_word):
+        if in_bisect(dictionary, new_word) and new_word not in possible_words:
             possible_words.append(new_word)  
         
     return possible_words
@@ -94,13 +94,12 @@ def main():
     while True:
         
         display(generate_words(dictionary, in_bisect))
-        
+        print('\n')
         if input('Try again? (y/n): ') == 'y':
             continue
         else:
-            print('\nGoodbye cheater!')
+            print('\nGoodbye cheater!\n')
             break
-
 
 if __name__ == "__main__":
     import doctest
