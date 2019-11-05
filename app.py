@@ -96,5 +96,5 @@ while True:
     if input('Try again? (y/n): ') == 'y':
         continue
     else:
-        print('\nGoodbye!')
+        print('\nGoodbye cheater!')
         break
