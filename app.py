@@ -87,14 +87,23 @@ def display(word_list):
         for word in word_list:
             print(word)
 
-dictionary = build_list()
 
-while True:
-    
-    display(generate_words(dictionary, in_bisect))
-    
-    if input('Try again? (y/n): ') == 'y':
-        continue
-    else:
-        print('\nGoodbye cheater!')
-        break
+def main():
+    dictionary = build_list()
+
+    while True:
+        
+        display(generate_words(dictionary, in_bisect))
+        
+        if input('Try again? (y/n): ') == 'y':
+            continue
+        else:
+            print('\nGoodbye cheater!')
+            break
+
+
+if __name__ == "__main__":
+    import doctest
+
+    doctest.testmod()
+    main()
