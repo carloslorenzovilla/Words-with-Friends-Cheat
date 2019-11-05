@@ -8,7 +8,7 @@ from itertools import permutations
 import sys
 
 def build_list():
-    """ Builds a list of words in a text file.
+    """ Builds a list of words from a text file.
     
         Assumption: Text file line format is <word>\r\n
         
