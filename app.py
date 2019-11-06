@@ -5,7 +5,6 @@ Created on Mon Nov  4 10:27:38 2019
 """
 
 from itertools import permutations
-import sys
 
 def build_dict():
     """ Builds a list of words in a text file.
