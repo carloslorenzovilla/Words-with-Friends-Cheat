@@ -26,32 +26,24 @@ def build_dict():
     
 def generate_words(dictionary):
     """ Generates a list of possible words of a
-        specific size given a string of letters.
-        Permutations are compared with elements in
-        a dictionary. Throws ValueError exception
-        if size is not an integer.
+        specific size >= 2 given a string of letters.
+        Permutations are compared with keys in
+        a dictionary.
         
         dictionary: dict
         
         returns: list
     """
     print('\nHello cheater!')
-    letters = input('Enter the 7 letters: ')    
-    
-    try:
-        size = int(input('Enter the length of word (max 7): '))
-        print('\n')
-        
-    except ValueError:
-        print('\nYou must enter an iteger!\n')
-        sys.exit()
+    letters = input('Enter the letters: ')    
         
     possible_words = []
-    for word in permutations(letters, size):
-        delimeter = ""
-        new_word = delimeter.join(word)
-        if new_word in dictionary:
-            possible_words.append(new_word)  
+    for size in range(2, len(letters)):
+        for word in permutations(letters, size):
+            delimeter = ""
+            new_word = delimeter.join(word)
+            if new_word in dictionary and new_word not in possible_words:
+                possible_words.append(new_word)  
         
     return possible_words
     
